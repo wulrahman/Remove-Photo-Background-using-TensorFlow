@@ -37,8 +37,8 @@ if __name__ == "__main__":
 
     for path in tqdm(data_x, total=len(data_x)):
          """ Extracting name """
-         name = path.split("/")[-1].split(".")[0]
-
+         name = os.path.splitext(os.path.basename(path))[0]
+        
          """ Read the image """
          image = cv2.imread(path, cv2.IMREAD_COLOR)
          h, w, _ = image.shape
